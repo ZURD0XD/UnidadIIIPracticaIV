@@ -32,7 +32,7 @@ public:
 	Vertex3d getOrigin() const { return origin; }
 	int getNumColor() const { return numColor; }
 	int getNumVertex() const { return numVertex; }
-  double getPerimeter() const { return perimeter; }
+	double getPerimeter() const { return perimeter; }
 	double getArea() const { return area; }
 	double getVolume() const { return volume; }
 

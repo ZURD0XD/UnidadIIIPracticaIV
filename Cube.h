@@ -50,7 +50,7 @@ public:
 	Cube(const Cube& cube) {
 		Vertex3d pos = cube.getOrigin();
 		setOrigin(pos.getX(), pos.getY(), pos.getZ());
-		setColor(cube.getColor());
+		setColor(cube.getNumColor());
 		setDimension(cube.getDimension());
 		setNumVertex(8);
 		calculateVertex();
@@ -67,13 +67,13 @@ public:
 			   colors[4].setRGB(0.0, 1.0, 0.0);	colors[5].setRGB(0.0, 0.0, 1.0);
 			   break;
 		case 2:
-			   colors[0].setRGB(1.0, 0.0, 1.0);	colors[1].setRGB(1.0, 0.0, 0.0);
+			   colors[0].setRGB(1.0, 0.0, 1.0);		colors[1].setRGB(1.0, 0.0, 0.0);
 			   colors[2].setRGB(0.0, 0.0, 0.75);	colors[3].setRGB(0.0, 1.0, 1.0);
 			   colors[4].setRGB(1.0, 0.75, 0.75);	colors[5].setRGB(0.75, 1.0, 1.0);
 			   break;
 		case 3:
-			   colors[0].setRGB(0.5, 0.5, 0.5);	colors[1].setRGB(0.9, 0.8, 0.7);
-			   colors[2].setRGB(0.6, 0.5, 0.4);	colors[3].setRGB(1.0, 1.0, 0.75);
+			   colors[0].setRGB(0.5, 0.5, 0.5);		colors[1].setRGB(0.9, 0.8, 0.7);
+			   colors[2].setRGB(0.6, 0.5, 0.4);		colors[3].setRGB(1.0, 1.0, 0.75);
 			   colors[4].setRGB(0.75, 1.0, 1.0);	colors[5].setRGB(1.0, 0.75, 1.0);
 			   break;
 		case 4:

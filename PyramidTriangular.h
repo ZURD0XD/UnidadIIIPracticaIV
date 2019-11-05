@@ -14,49 +14,59 @@ private:
 	Vertex3d vertexPos[4];	// NUMERO DE VERTICES
 	Color colors[4];				// NUMERO DE COLORES DE CARAS
 	double base;						// DIMENSION DEL LADO DE BASE
-  double height;					// DIMENSION DE ALTURA DE PIRAMIDE
+	double height;					// DIMENSION DE ALTURA DE PIRAMIDE
 
 public:
-	// PyramidTriangular() {
-	// 	setOrigin(0, 0, 0);
-	// 	setColor(1);
-	// 	setDimension(1);
-	// 	setNumVertex(8);
-	// 	calculateVertex();
-	// }
-	//
-	// PyramidTriangular(double x, double y, double z) {
-	// 	setOrigin(x, y, z);
-	// 	setColor(1);
-	// 	setDimension(1);
-	// 	setNumVertex(8);
-	// 	calculateVertex();
-	// }
-	//
-	// PyramidTriangular(double x, double y, double z, double dim) {
-	// 	setOrigin(x, y, z);
-	// 	setColor(1);
-	// 	setDimension(dim);
-	// 	setNumVertex(8);
-	// 	calculateVertex();
-	// }
-	//
-	// PyramidTriangular(double x, double y, double z, double dim, int col) {
-	// 	setOrigin(x, y, z);
-	// 	setColor(col);
-	// 	setDimension(dim);
-	// 	setNumVertex(8);
-	// 	calculateVertex();
-	// }
-	//
-	// PyramidTriangular(const PyramidTriangular& pyramidtriangular) {
-	// 	Vertex3d pos = pyramidtriangular.getOrigin();
-	// 	setOrigin(pos.getX(), pos.getY(), pos.getZ());
-	// 	setColor(pyramidtriangular.getColor());
-	// 	setDimension(pyramidtriangular.getDimension());
-	// 	setNumVertex(8);
-	// 	calculateVertex();
-	// }
+	PyramidTriangular() 
+	{
+		setOrigin(0, 0, 0);
+		setColor(1);
+		setBase(1);
+		setHeight(1);
+		setNumVertex(4);
+		calculateVertex();
+	}
+	
+	PyramidTriangular(double _x, double _y, double _z) 
+	{
+	 	setOrigin(_x, _y, _z);
+	 	setColor(1);
+		setBase(1);
+		setHeight(1);
+	 	setNumVertex(4);
+	 	calculateVertex();
+	}
+	
+	PyramidTriangular(double _x, double _y, double _z, double _base, double _height)
+	{
+		setOrigin(_x, _y, _z);
+		setColor(1);
+		setBase(_base);
+		setHeight(_height);
+		setNumVertex(4);
+	 	calculateVertex();
+	}
+	
+	PyramidTriangular(double _x, double _y, double _z, double _base, double _height, int _col)
+	{
+		setOrigin(_x, _y, _z);
+		setColor(_col);
+		setBase(_base);
+		setHeight(_height);
+		setNumVertex(4);
+	 	calculateVertex();
+	}
+	
+	PyramidTriangular(const PyramidTriangular& pyramidtriangular) 
+	{
+	 	Vertex3d pos = pyramidtriangular.getOrigin();
+	 	setOrigin(pos.getX(), pos.getY(), pos.getZ());
+	 	setColor(pyramidtriangular.getNumColor());
+		setBase(pyramidtriangular.getBase());
+		setHeight(pyramidtriangular.getHeight());
+	 	setNumVertex(4);
+	 	calculateVertex();
+	}
 
 	void setColor(int colorNumber)
 	{
@@ -116,9 +126,9 @@ public:
 
 	void assignProperties()
 	{
-		perimeter = calculatePerimeter();
-		area = calculateArea();
-		volume = calculateVolume();
+		//perimeter = calculatePerimeter();
+		//area = calculateArea();
+		//volume = calculateVolume();
 	}
 
 	double getBase()	const { return base; }
@@ -139,7 +149,6 @@ public:
 
 	void calculateVertex()
 	{
-		//Vertex3d aux_origin = getOrigin();
 		double x1 = origin.getX() - (getBase() / 2);
 		double y1 = origin.getY() - (getHeight() / sqrt(12.0));
 		double z1 = origin.getZ();
