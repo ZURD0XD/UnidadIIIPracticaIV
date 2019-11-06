@@ -1,13 +1,16 @@
 #pragma once
 
+// CLASE PERTENECIENTE A LOS COLORES EN RGB
 class Color
 {
+	// ATRIBUTOS COLOR RED, GREEN, BLUE -------
 	private:
 		float colorR;
 		float colorG;
 		float colorB;
 
 	public:
+		// CONSTRUCTORES ------------------
 		Color()
 		{
 			colorR = 1.0;
@@ -21,7 +24,8 @@ class Color
 			setG(_g);
 			setB(_b);
 		}
-
+		
+		// GETTERS & SETTERS --------------
 		float getR()
 		{
 			return colorR;
@@ -37,6 +41,8 @@ class Color
 			return colorB;
 		}
 
+		// SI EL VALOR ENVIADO ES MENOR A 0 O MAYOR A 1 
+		// LE ES ASIGNADO EL VALOR DE 1.0 POR DEFECTO
 		void setR(float _r)
 		{
 			if (_r >= 0 && _r <= 1)
@@ -73,6 +79,7 @@ class Color
 			}
 		}
 
+		// METODO DE ASIGNACION DE LOS 3 COLORES A LA VEZ
 		void setRGB(float _r, float _g, float _b)
 		{
 			setR(_r);
