@@ -3,7 +3,7 @@
 #include <GL/glut.h>
 #include "Vertex3d.h"
 
-// ------- CLASE PRINCIPAL ----------------------------------
+// ------- CLASE PRINCIPAL SHAPES3D--------------------------------
 class Shapes3d
 {
 	// ----- ATRIBUTOS DE LAS FIGURAS -------------------------
@@ -20,6 +20,9 @@ protected:
 	// EN LA CLASE HIJA --------------------------------------
 public:
 
+	// GETTERS & SETTERS--------------------------------------
+	
+	// ESTABLECE EL ORIGEN DE LA FIGURA
 	void setOrigin(double _x, double _y, double _z)
 	{
 		origin.setX(_x);
@@ -36,7 +39,7 @@ public:
 	double getArea() const { return area; }
 	double getVolume() const { return volume; }
 
-	// --- METODOS DE LAS FIGURAS ------------------------
+	// --- METODOS DE LAS FIGURAS ---------------------------
 	virtual double calculateArea() = 0;
 	virtual double calculatePerimeter() = 0;
 	virtual double calculateVolume() = 0;
