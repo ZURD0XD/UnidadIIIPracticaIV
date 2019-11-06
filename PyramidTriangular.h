@@ -13,7 +13,7 @@ class PyramidTriangular : public Shapes3d
 private:
 	Vertex3d vertexPos[4];	// NUMERO DE VERTICES
 	Color colors[4];				// NUMERO DE COLORES DE CARAS
-	double base;						// DIMENSION DEL LADO DE BASE
+	double base;					// DIMENSION DEL LADO DE BASE
 	double height;					// DIMENSION DE ALTURA DE PIRAMIDE
 
 public:

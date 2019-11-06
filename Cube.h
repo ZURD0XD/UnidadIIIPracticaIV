@@ -10,7 +10,7 @@ class Cube : public Shapes3d
 {
 	// ----- ATRIBUTOS PERTENECIENTES A CUBO -------------
 private:
-	Vertex3d vertexPos[8];	// NUMERO DE VERTICES
+	Vertex3d vertexPos[8];			// NUMERO DE VERTICES
 	Color colors[6];				// NUMERO DE COLORES DE CARAS
 	double dimension;				// DIMENSION DEL CUBO
 
@@ -141,7 +141,6 @@ public:
 
 	void drawFigure()
 	{
-		//glColor3f(1.0, 0.0, 0.0);
 		Color aux_color = colors[0];
 		glColor3f(aux_color.getR(), aux_color.getG(), aux_color.getB());
 		glBegin(GL_POLYGON);
