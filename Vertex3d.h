@@ -1,14 +1,18 @@
 #pragma once
 #include <cmath>
 
+// CLASE DE VERTICE EN 3D ----------------------
 class Vertex3d
 {
+	
+// ATRIBUTOS COORDENADA X, Y, Z ----------------	
 private:
 	double x;
 	double y;
 	double z;
 
 public:
+	// CONSTRUCTORES -----------------------
 	Vertex3d()
 	{
 		setX(0);
@@ -23,6 +27,7 @@ public:
 		setZ(_z);
 	}
 
+	// GETTERS & SETTERS --------------------
 	double getX()
 	{
 		return x;
@@ -52,14 +57,16 @@ public:
 	{
 		z = _z;
 	}
-
+	
+	// METODO ASIGNA LAS TRES COORDENADAS A LA VEZ
 	void setXYZ(double _x, double _y, double _z)
 	{
 		setX(_x);
 		setY(_y);
 		setZ(_z);
 	}
-
+	
+	// METODO PARA MOVER LA COORDENADA DEL VERTICE
 	void moveVertex3d(double _x, double _y, double _z)
 	{
 		setX(getX() + _x);
@@ -73,9 +80,10 @@ public:
 	setY(getY() * _y);
 	setZ(getZ() * _z);
 	}*/
-
+	/*
 	void rotateVertex3d(double _x, double _y, double _z)
 	{
 
 	}
+	*/
 };
