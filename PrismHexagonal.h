@@ -6,12 +6,12 @@
 #include "Vertex3d.h"
 #include "Color.h"
 
-// ------- CLASE HIJA / PYRAMID -----------------------------
+// ------- CLASE HIJA / PRISM HEXAGONAL -----------------------------
 class PrismHexagonal : public Shapes3d
 {
-	// ----- ATRIBUTOS PERTENECIENTES A PYRAMID TRIANGULAR-----
+	// ----- ATRIBUTOS PERTENECIENTES A PRISM HEXAGONAL -----
 private:
-	Vertex3d vertexPos[12];			// NUMERO DE VERTICES
+	Vertex3d vertexPos[12];				// NUMERO DE VERTICES
 	Color colors[8];				// NUMERO DE COLORES DE CARAS
 	double base;					// DIMENSION DEL LADO DE BASE
 	double height;					// DIMENSION DE ALTURA DE PRISMA
@@ -121,7 +121,7 @@ public:
 	{
 		if (_base > 0) { base = _base; }
 		else { setBase(1); }
-		apothem = (getBase() / 2) * sqrt(3);
+		apothem = (getBase() / 2) * sqrt(3.0);
 		assignProperties();
 	}
 
