@@ -6,16 +6,16 @@
 #include "Vertex3d.h"
 #include "Color.h"
 
-// ------- CLASE HIJA / PYRAMID -----------------------------
+// ------- CLASE HIJA / PRISM CUADRANGULAR -----------------------------
 class PrismCuadrangular : public Shapes3d
 {
-	// ----- ATRIBUTOS PERTENECIENTES A PYRAMID TRIANGULAR-----
+	// ----- ATRIBUTOS PERTENECIENTES A PRISM CUADRANGULAR -----
 private:
 	Vertex3d vertexPos[8];			// NUMERO DE VERTICES
-	Color colors[6];				// NUMERO DE COLORES DE CARAS
-	double base;					// DIMENSION DEL LADO DE BASE
-	double length;
-	double height;					// DIMENSION DE ALTURA DE PRISMA
+	Color colors[6];			// NUMERO DE COLORES DE CARAS
+	double base;				// DIMENSION DEL LADO DE BASE
+	double length;				// DIMENSION DEL ANCHO
+	double height;				// DIMENSION DE ALTURA DE PRISMA
 
 public:
 	PrismCuadrangular()
@@ -95,26 +95,26 @@ public:
 			colors[4].setRGB(0.75, 1.0, 1.0);	colors[5].setRGB(1.0, 0.75, 1.0);
 			break;
 		case 4:
-			for (int i = 0; i < getNumVertex(); i++) { colors[i].setRGB(1.0, 0.0, 0.0); }
+			for (int i = 0; i < getNumVertex() - 2; i++) { colors[i].setRGB(1.0, 0.0, 0.0); }
 			break;
 		case 5:
-			for (int i = 0; i < getNumVertex(); i++) { colors[i].setRGB(0.0, 1.0, 0.0); }
+			for (int i = 0; i < getNumVertex() - 2; i++) { colors[i].setRGB(0.0, 1.0, 0.0); }
 			break;
 		case 6:
-			for (int i = 0; i < getNumVertex(); i++) { colors[i].setRGB(0.0, 0.0, 1.0); }
+			for (int i = 0; i < getNumVertex() - 2; i++) { colors[i].setRGB(0.0, 0.0, 1.0); }
 			break;
 		case 7:
-			for (int i = 0; i < getNumVertex(); i++) { colors[i].setRGB(1.0, 1.0, 0.0); }
+			for (int i = 0; i < getNumVertex() - 2; i++) { colors[i].setRGB(1.0, 1.0, 0.0); }
 			break;
 		case 8:
-			for (int i = 0; i < getNumVertex(); i++) { colors[i].setRGB(1.0, 0.0, 1.0); }
+			for (int i = 0; i < getNumVertex() - 2; i++) { colors[i].setRGB(1.0, 0.0, 1.0); }
 			break;
 		case 9:
-			for (int i = 0; i < getNumVertex(); i++) { colors[i].setRGB(0.0, 1.0, 1.0); }
+			for (int i = 0; i < getNumVertex() - 2; i++) { colors[i].setRGB(0.0, 1.0, 1.0); }
 			break;
 		default:
 			numColor = 0;
-			for (int i = 0; i < getNumVertex(); i++) { colors[i].setRGB(0.0, 0.0, 0.0); }
+			for (int i = 0; i < getNumVertex() - 2; i++) { colors[i].setRGB(0.0, 0.0, 0.0); }
 			break;
 		}
 	}
