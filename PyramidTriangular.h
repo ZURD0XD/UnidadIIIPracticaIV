@@ -6,12 +6,12 @@
 #include "Vertex3d.h"
 #include "Color.h"
 
-// ------- CLASE HIJA / PYRAMID -----------------------------
+// ------- CLASE HIJA / PYRAMID TRIANGULAR -----------------------------
 class PyramidTriangular : public Shapes3d
 {
 	// ----- ATRIBUTOS PERTENECIENTES A PYRAMID TRIANGULAR-----
 private:
-	Vertex3d vertexPos[4];	// NUMERO DE VERTICES
+	Vertex3d vertexPos[4];				// NUMERO DE VERTICES
 	Color colors[4];				// NUMERO DE COLORES DE CARAS
 	double base;					// DIMENSION DEL LADO DE BASE
 	double height;					// DIMENSION DE ALTURA DE PIRAMIDE
@@ -143,7 +143,6 @@ public:
 		vertexPos[0].setXYZ(_x1, _y1, _z1);
 		vertexPos[1].setXYZ(_x1 + _b, _y1, _z1);
 		vertexPos[2].setXYZ(_x1 + (_b / 2), origin.getY() + (1 / sqrt(_b)), _z1);
-		//vertexPos[2].setXYZ(_x1 + (_b / 2), _y1 + (sqrt(pow(_b,2.0) - (pow((_b/2.0),2.0)))), _z1 + dim);
 		vertexPos[3].setXYZ(origin.getX(), origin.getY(), _z1 + getHeight());
 	}
 
@@ -157,7 +156,6 @@ public:
 
 	void drawFigure()
 	{
-		//glColor3f(1.0, 0.0, 0.0);
 		Color aux_color = colors[0];
 		glColor3f(aux_color.getR(), aux_color.getG(), aux_color.getB());
 		glBegin(GL_POLYGON);
@@ -177,7 +175,7 @@ public:
 		aux_color = colors[2];
 		glColor3f(aux_color.getR(), aux_color.getG(), aux_color.getB());
 		glBegin(GL_POLYGON);
-		glVertex3f(vertexPos[0].getX(), vertexPos[0].getY(), vertexPos[0].getZ());
+		glVertex3f(vertexPos[1].getX(), vertexPos[1].getY(), vertexPos[1].getZ());
 		glVertex3f(vertexPos[2].getX(), vertexPos[2].getY(), vertexPos[2].getZ());
 		glVertex3f(vertexPos[3].getX(), vertexPos[3].getY(), vertexPos[3].getZ());
 		glEnd();
@@ -185,8 +183,8 @@ public:
 		aux_color = colors[3];
 		glColor3f(aux_color.getR(), aux_color.getG(), aux_color.getB());
 		glBegin(GL_POLYGON);
-		glVertex3f(vertexPos[1].getX(), vertexPos[1].getY(), vertexPos[1].getZ());
 		glVertex3f(vertexPos[2].getX(), vertexPos[2].getY(), vertexPos[2].getZ());
+		glVertex3f(vertexPos[0].getX(), vertexPos[0].getY(), vertexPos[0].getZ());
 		glVertex3f(vertexPos[3].getX(), vertexPos[3].getY(), vertexPos[3].getZ());
 		glEnd();
 	}
