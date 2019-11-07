@@ -6,7 +6,7 @@
 #include "Vertex3d.h"
 #include "Color.h"
 
-// ------- CLASE HIJA / PYRAMID -----------------------------
+// ------- CLASE HIJA / PYRAMID HEXAGONAL -----------------------------
 class PyramidHexagonal : public Shapes3d
 {
 	// ----- ATRIBUTOS PERTENECIENTES A PYRAMID HEXAGONAL-----
@@ -121,7 +121,7 @@ public:
 	{
 		if (_side > 0) { side = _side; }
 		else { setSide(1); }
-		apothem = (getSide() / 2) * sqrt(3);
+		apothem = (getSide() / 2) * sqrt(3.0);
 		assignProperties();
 	}
 
@@ -134,9 +134,9 @@ public:
 
 	void assignProperties()
 	{
-		perimeter = calculatePerimeter();
-		area = calculateArea();
-		volume = calculateVolume();
+		//perimeter = calculatePerimeter();
+		//area = calculateArea();
+		//volume = calculateVolume();
 	}
 
 	double getSide()	const { return side; }
@@ -167,13 +167,12 @@ public:
 		double x1 = origin.getX() - (getSide() / 2);
 		double y1 = origin.getY() - getApothem();
 		double z1 = origin.getZ();
-		double hypotenuse = sqrt(pow(getApothem(), 2.0) + pow((getSide() / 2), 2.0));
+		double hypotenuse = sqrt(pow(getApothem(), 2) + pow((getSide() / 2), 2.0));
 		setVertex(x1, y1, z1, getApothem());
 	}
 
 	void drawFigure()
 	{
-		//glColor3f(1.0, 0.0, 0.0);
 		Color aux_color = colors[0];
 		glColor3f(aux_color.getR(), aux_color.getG(), aux_color.getB());
 		glBegin(GL_POLYGON);
