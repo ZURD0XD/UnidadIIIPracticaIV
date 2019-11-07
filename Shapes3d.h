@@ -40,11 +40,11 @@ public:
 	double getVolume() const { return volume; }
 
 	// --- METODOS DE LAS FIGURAS ---------------------------
-	virtual double calculateArea() = 0;
-	virtual double calculatePerimeter() = 0;
-	virtual double calculateVolume() = 0;
-	virtual void assignProperties() = 0;
-	virtual void drawFigure() = 0;
-	virtual void moveFigure() = 0;
-	virtual void scaleFigure() = 0;
+	//virtual double calculateArea() = 0;
+	//virtual double calculatePerimeter() = 0;
+	//virtual double calculateVolume() = 0;
+	//virtual void assignProperties() = 0;
+	//virtual void drawFigure() = 0;
+	//virtual void moveFigure() = 0;
+	//virtual void scaleFigure() = 0;
 };
