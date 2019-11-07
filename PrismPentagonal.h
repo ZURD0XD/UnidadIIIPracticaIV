@@ -166,15 +166,15 @@ public:
 	{
 		double x0 = origin.getX();
 		double y0 = origin.getY();
-		double x1 = origin.getX() - (getBase() / 2);
-		double y1 = origin.getY() - getApothem();
+		double x1 = x0 - (getBase() / 2);
+		double y1 = y0 - getApothem();
 		double z1 = origin.getZ();
 		double hypotenuse = sqrt(pow(getApothem(), 2.0) + pow((getBase() / 2), 2.0));
 		double xCathetus = getBase() * cos(degToRad(72));
 		double yCathetus = sqrt(pow(getBase(), 2.0) - pow(xCathetus, 2.0));
 		double x2 = x1 + getBase();
 		double x3 = x2 + xCathetus;
-		double x4 = x2 - xCathetus;
+		double x4 = x1 - xCathetus;
 		double y2 = y1 + yCathetus;
 		double y3 = y0 + hypotenuse;
 		double z2 = z1 + getHeight();
