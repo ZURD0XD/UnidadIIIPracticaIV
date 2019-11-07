@@ -6,16 +6,16 @@
 #include "Vertex3d.h"
 #include "Color.h"
 
-// ------- CLASE HIJA / PYRAMID -----------------------------
+// ------- CLASE HIJA / PRISM PENTAGONAL -----------------------------
 class PrismPentagonal : public Shapes3d
 {
-	// ----- ATRIBUTOS PERTENECIENTES A PYRAMID TRIANGULAR-----
+	// ----- ATRIBUTOS PERTENECIENTES A PRISM PENTAGONAL-----
 private:
-	Vertex3d vertexPos[10];			// NUMERO DE VERTICES
+	Vertex3d vertexPos[10];				// NUMERO DE VERTICES
 	Color colors[7];				// NUMERO DE COLORES DE CARAS
 	double base;					// DIMENSION DEL LADO DE BASE
 	double height;					// DIMENSION DE ALTURA DE PRISMA
-	double apothem;
+	double apothem;					// APOTEMA
 
 public:
 	PrismPentagonal()
