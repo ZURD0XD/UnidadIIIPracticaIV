@@ -6,12 +6,12 @@
 #include "Vertex3d.h"
 #include "Color.h"
 
-// ------- CLASE HIJA / PYRAMID -----------------------------
+// ------- CLASE HIJA / PYRAMID PENTAGONAL -----------------------------
 class PyramidPentagonal : public Shapes3d
 {
-	// ----- ATRIBUTOS PERTENECIENTES A PYRAMID TRIANGULAR-----
+	// ----- ATRIBUTOS PERTENECIENTES A PYRAMID PENTAGONAL-----
 private:
-	Vertex3d vertexPos[6];			// NUMERO DE VERTICES
+	Vertex3d vertexPos[6];				// NUMERO DE VERTICES
 	Color colors[6];				// NUMERO DE COLORES DE CARAS
 	double side;					// DIMENSION DEL LADO DE BASE
 	double height;					// DIMENSION DE ALTURA DE PIRAMIDE
@@ -131,9 +131,9 @@ public:
 
 	void assignProperties()
 	{
-		perimeter = calculatePerimeter();
-		area = calculateArea();
-		volume = calculateVolume();
+		//perimeter = calculatePerimeter();
+		//area = calculateArea();
+		//volume = calculateVolume();
 	}
 
 	double getSide()	const { return side; }
@@ -162,7 +162,7 @@ public:
 		double x1 = origin.getX() - (getSide() / 2);
 		double y1 = origin.getY() - getApothem();
 		double z1 = origin.getZ();
-		double hypotenuse = sqrt(pow(getApothem(), 2.0) + pow((getSide() / 2), 2.0));
+		double hypotenuse = sqrt(pow(getApothem(), 2) + pow((getSide() / 2), 2.0));
 		setVertex(x1, y1, z1, hypotenuse);
 	}
 
@@ -219,8 +219,8 @@ public:
 		aux_color = colors[5];
 		glColor3f(aux_color.getR(), aux_color.getG(), aux_color.getB());
 		glBegin(GL_POLYGON);
-		glVertex3f(vertexPos[1].getX(), vertexPos[1].getY(), vertexPos[1].getZ());
 		glVertex3f(vertexPos[4].getX(), vertexPos[4].getY(), vertexPos[4].getZ());
+		glVertex3f(vertexPos[0].getX(), vertexPos[0].getY(), vertexPos[0].getZ());
 		glVertex3f(vertexPos[5].getX(), vertexPos[5].getY(), vertexPos[5].getZ());
 		glEnd();
 	}
